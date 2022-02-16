@@ -37,4 +37,10 @@ export class ApiserviceService {
     return this._http.put(`${this.apiUrl}/${ids}`, data);
   }
 
+  // get single data
+  getSingleData(id:any):Observable<any> {
+    let ids = id;
+    return this._http.get(`${this.apiUrl}/${ids}`);
+  }
+
 }

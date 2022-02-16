@@ -9,7 +9,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
-  <form [formGroup]="userForm" (ngSubmit)="userSubmit()"  >
+  <form [formGroup]="userForm">
     <div class="col-lg-4 mt-2">
       <input type="text" class="form-control" formControlName="fullname" placeholder="Enter Full Name">
     </div>
@@ -19,8 +19,11 @@
     <div class="col-lg-4 mt-2">
       <input type="text" class="form-control" formControlName="mobile" placeholder="Enter Mobile Numbre">
     </div>
-    <div class="col-lg-4 mt-2">
-      <button class="btn btn-primary btn-sm">Create</button>
+    <div class="col-lg-4 mt-2" *ngIf="!getparamid" (click)="userSubmit()">
+      <button class="btn btn-primary btn-sm">Crear</button>
+    </div>
+    <div class="col-lg-4 mt-2" *ngIf="getparamid" (click)="userUpdate()">
+      <button class="btn btn-dark btn-sm">Actualizar</button>
     </div>
   </form>
 </div>
