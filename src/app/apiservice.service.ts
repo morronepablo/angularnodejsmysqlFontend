@@ -25,4 +25,16 @@ export class ApiserviceService {
     return this._http.post(`${this.apiUrl}`, data);
   }
 
+  // delete data
+  deleteData(id:any):Observable<any> {
+    const ids = id;
+    return this._http.delete(`${this.apiUrl}/${ids}`);
+  }
+
+  // update data
+  updateData(data:any, id:any):Observable<any> {
+    const ids = id;
+    return this._http.put(`${this.apiUrl}/${ids}`, data);
+  }
+
 }

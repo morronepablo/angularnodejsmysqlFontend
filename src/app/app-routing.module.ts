@@ -6,6 +6,7 @@ import { ReadComponent } from './read/read.component';
 
 const routes: Routes = [
   {path: 'create', component: CreateComponent},
+  {path: 'update/:id', component: CreateComponent},
   {path: 'read', component: ReadComponent}
 ];
 
